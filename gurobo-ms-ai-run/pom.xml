@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>it.gurobo.ms.ai</groupId>
+        <artifactId>gurobo-ms-ai</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>gurobo-ms-ai-run</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>it.gurobo.ms.base</groupId>
+            <artifactId>gurobo-ms-base-run</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>it.gurobo.ms.ai</groupId>
+            <artifactId>gurobo-ms-ai-controller</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>it.gurobo.ms.ai.run.AiApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

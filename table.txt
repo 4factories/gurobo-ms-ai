@@ -1,0 +1,73 @@
+ai.ai_chat
+
+Campo
+
+Tipo
+
+Vincoli
+
+Descrizione
+
+uid
+
+UUID
+
+PK, NOT NULL, DEFAULT gen_random_uuid()
+
+Identificativo della chat
+
+id_user
+
+UUID
+
+NOT NULL
+
+Riferimento all’utente
+
+attivo
+
+BOOLEAN
+
+NOT NULL, DEFAULT TRUE
+
+Stato del record
+
+management_record
+
+VARCHAR(24)
+
+NOT NULL, DEFAULT ‘NONE’
+
+Gestione record
+
+date_insert
+
+TIMESTAMP
+
+NOT NULL
+
+Data creazione
+
+date_last_update
+
+TIMESTAMP
+
+NULL
+
+Ultima modifica
+
+user_insert
+
+VARCHAR(255)
+
+NULL
+
+Utente inserimento
+
+user_last_update
+
+VARCHAR(255)
+
+NULL
+
+Utente ultima modifica

@@ -1,0 +1,125 @@
+databaseChangeLog:
+  - changeSet:
+      id: ms-ai-0001
+      author: gurobo
+      changes:
+        - sql:
+            dbms: postgresql
+            splitStatements: true
+            stripComments: true
+            sql: |
+              CREATE SCHEMA IF NOT EXISTS ai;
+
+  - changeSet:
+      id: ms-ai-0002
+      author: gurobo
+      changes:
+        - createTable:
+            schemaName: ai
+            tableName: cron_expression
+            columns:
+              - column:
+                  name: uid
+                  type: uuid
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: cron_expression_pkey
+
+              - column:
+                  name: date_insert
+                  type: timestamp without time zone
+                  defaultValueComputed: now()
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: date_last_update
+                  type: timestamp without time zone
+
+              - column:
+                  name: user_insert
+                  type: varchar(32)
+                  defaultValue: SYSTEM
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: user_last_update
+                  type: varchar(32)
+
+              - column:
+                  name: attivo
+                  type: boolean
+                  defaultValueBoolean: true
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: codice
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: descrizione
+                  type: varchar(128)
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: note
+                  type: text
+
+              - column:
+                  name: cron_expression
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: long_time
+                  type: boolean
+                  defaultValueBoolean: true
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: management_record
+                  type: varchar(20)
+                  defaultValue: NONE
+                  constraints:
+                    nullable: false
+
+        - addUniqueConstraint:
+            schemaName: ai
+            tableName: cron_expression
+            columnNames: descrizione
+            constraintName: uk_3cjavth3el6emoy9fsmogk9lt
+
+        - addUniqueConstraint:
+            schemaName: ai
+            tableName: cron_expression
+            columnNames: cron_expression
+            constraintName: uk_dkjspch6xhtm16pc3a1iaroki
+
+        - addUniqueConstraint:
+            schemaName: ai
+            tableName: cron_expression
+            columnNames: codice
+            constraintName: uk_pte9ob9w9ovf8223uegypkq66
+
+        - insert:
+            schemaName: ai
+            tableName: cron_expression
+            columns:
+              - column:
+                  name: codice
+                  value: test
+              - column:
+                  name: descrizione
+                  value: test
+              - column:
+                  name: cron_expression
+                  value: "0 55 19 ? * *"

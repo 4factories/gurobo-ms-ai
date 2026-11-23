@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>it.gurobo.ms.base</groupId>
+        <artifactId>gurobo-ms-base</artifactId>
+        <version>26.10.1-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+        <revision>26.10.1-SNAPSHOT</revision>
+    </properties>
+
+    <groupId>it.gurobo.ms.ai</groupId>
+    <version>${revision}</version>
+    <artifactId>gurobo-ms-ai</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>gurobo-ms-ai-commons</module>
+        <module>gurobo-ms-ai-dto</module>
+        <module>gurobo-ms-ai-invoker</module>
+        <module>gurobo-ms-ai-entity</module>
+        <module>gurobo-ms-ai-repository</module>
+        <module>gurobo-ms-ai-dao</module>
+        <module>gurobo-ms-ai-delegate</module>
+        <module>gurobo-ms-ai-controller</module>
+        <module>gurobo-ms-ai-run</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>it.gurobo.ms.ai</groupId>
+                <artifactId>gurobo-ms-ai-commons</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>it.gurobo.ms.ai</groupId>
+                <artifactId>gurobo-ms-ai-dto</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>it.gurobo.ms.ai</groupId>
+                <artifactId>gurobo-ms-ai-invoker</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>it.gurobo.ms.ai</groupId>
+                <artifactId>gurobo-ms-ai-entity</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>it.gurobo.ms.ai</groupId>
+                <artifactId>gurobo-ms-ai-repository</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>it.gurobo.ms.ai</groupId>
+                <artifactId>gurobo-ms-ai-dao</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>it.gurobo.ms.ai</groupId>
+                <artifactId>gurobo-ms-ai-delegate</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>it.gurobo.ms.ai</groupId>
+                <artifactId>gurobo-ms-ai-controller</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>it.gurobo.ms.ai</groupId>
+                <artifactId>gurobo-ms-ai-run</artifactId>
+                <version>${revision}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
